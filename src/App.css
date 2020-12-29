@@ -1,38 +1,676 @@
-.App {
+.container {
+/* .App { */
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex: 1;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* padding-top: 10%; */
+  width: 100%;
+  height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+html {
+  /* background: #018DED url(http://unsplash.it/1500/1000?image=881&blur=5); */
+  background: #018DED;
+  font-family: 'helvetica neue';
+  text-align: center;
+  font-size: 10px;
+  
 }
 
-@keyframes App-logo-spin {
+.App {
+/* body { */
+  background-image: url("https://cdn.pixabay.com/photo/2016/02/04/18/45/wall-1179614_960_720.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  font-size: 2rem;
+  width: auto;
+  height: 110vh;
+  overflow: hidden;
+  /* height: 100vh; */
+}
+
+.clock1 {
+/*    -webkit-transform: perspective(400px);*/
+/*    transform: perspective(400px);*/
+  width: 30vw;
+  height: 30vw;
+  box-sizing: border-box;
+  z-index: 100;
+  position: relative;
+margin-right: 2px;
+  border: 20px solid whitesmoke;
+/*      ten radius zaokrągla rogi kwadratu tak że obiekt przekształca się w koło*/
+border-radius: 50%; 
+
+  padding: 2rem;
+  box-shadow:
+    0 0 0 4px rgba(0,0,0,0.1),
+    inset 0 0 0 3px whitesmoke,
+    inset 0 0 10px black,
+    0 0 10px rgba(0,0,0,0.2);
+}
+
+.clock2 {
+    width: 30vw;
+    height: 30vw;
+    box-sizing: border-box;
+     position: relative;
+     /* border: 20px solid #8E666B; */
+     border: 16px solid #533c3f;
+     border-radius: 50%; 
+   padding: 2rem;
+   z-index: 0;
+    box-shadow:
+     0 0 0 4px #3f2d30,
+      inset 0 0 0 4px #3f2d30,
+      inset 0 0 4px #3f2d30,
+       0 0 4px #3f2d30;
+
+       /* 0 0 0 4px #533c3f,
+       inset 0 0 0 3px #533c3f,
+       inset 0 0 5px #533c3f,
+        0 0 5px #533c3f; */
+      /* -webkit-box-shadow: inset 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: inset 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: inset 10px 10px 5px 0px rgba(0,0,0,0.75); */
+  }
+
+.clock-face {
+position: relative;
+width: 100%;
+height: 100%;
+  /* transform: translateY(-3px);   */
+/*    account for the height of the clock hands */
+}
+  
+.hand {
+/*      dałem bottom zamiast 'top' i ustawiłem procentową wysokość a nie szerokość */
+  height: 50%;
+  /* background: black; */
+  position: absolute;
+  bottom: 50%;
+left: 50%;
+transform-origin: 50% 100%; /*pierwsza wartość to oś Y na środku, a druga to oś X na dole */
+/*		transform: rotate(90deg);*/
+transition: all .05s;
+transition-timing-function: cubic-bezier(0.26, 2.74, 0.82, 0.07);
+}
+
+.hour-hand-1 {
+height: 35%;
+width: 8px;
+background-color: black;
+}
+
+.min-hand-1 {
+/* background-color: darkolivegreen; */
+background-color: seagreen;
+width: 6px;
+height: 45%;
+}
+
+.second-hand-1 {
+background-color: palegoldenrod;
+width: 4px;
+transform: rotate(5deg);
+}
+
+.hour-hand-2 {
+  height: 35%;
+  width: 8px;
+  background-color: #3f2d30;
+  }
+  
+  .min-hand-2 {
+  background-color: #3f2d30;
+  width: 6px;
+  height: 45%;
+  }
+  
+  .second-hand-2 {
+  background-color: #3f2d30;
+  width: 4px;
+  transform: rotate(5deg);
+  }
+  
+@-webkit-keyframes disappear {
   from {
-    transform: rotate(0deg);
+      opacity: 1;
   }
+
   to {
-    transform: rotate(360deg);
+    opacity: 0;
   }
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+}
+
+to {
+  opacity: 0;
+}
+}
+
+
+.disappear {
+   /* animation-timing-function: ease-in-out; */
+-webkit-animation-duration: 30s;
+animation-duration: 30s;
+-webkit-animation-name: disappear;
+animation-name: disappear;
+}
+
+@-webkit-keyframes hit {
+  from, to {
+    -webkit-transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1);
+  }
+  
+  10% {
+    -webkit-transform: translateX(-2px) scale(0.98);
+    transform: translateX(-2px) scale(0.98);
+  }
+  
+  20% {
+    -webkit-transform: translateX(3px) scale(1.02);
+    transform: translateX(3px) scale(1.02);
+  }
+  
+  30% {
+    -webkit-transform: translateX(-3px) scale(0.98);
+    transform: translateX(-3px) scale(0.98);
+  }
+  
+  40% {
+    -webkit-transform: translateX(3px) scale(1.02);
+    transform: translateX(3px) scale(1.02);
+  }
+  
+  50% {
+    -webkit-transform: translateX(-3px) scale(0.98);
+    transform: translateX(-3px) scale(0.98);
+  }
+
+  60% {
+    -webkit-transform: translateX(3px) scale(1.01);
+    transform: translateX(3px) scale(1.01);
+  }
+
+  70% {
+    -webkit-transform: translateX(-3px) scale(0.99);
+    transform: translateX(-3px) scale(0.99);
+  }
+
+  80% {
+    -webkit-transform: translateX(2px) scale(1.01);
+    transform: translateX(2px) scale(1.01);
+  }
+
+  90% {
+    -webkit-transform: translateX(-2px) scale(0.99);
+    transform: translateX(-2px) scale(0.99);
+  }
+
+  }
+  
+  @keyframes hit {
+    from, to {
+    -webkit-transform: translateX(0) scale(1);
+    transform: translateX(0) scale(1);
+  }
+  
+  10% {
+    -webkit-transform: translateX(-2px) scale(0.98);
+    transform: translateX(-2px) scale(0.98);
+  }
+  
+  20% {
+    -webkit-transform: translateX(3px) scale(1.02);
+    transform: translateX(3px) scale(1.02);
+  }
+  
+  30% {
+    -webkit-transform: translateX(-3px) scale(0.98);
+    transform: translateX(-3px) scale(0.98);
+  }
+  
+  40% {
+    -webkit-transform: translateX(3px) scale(1.02);
+    transform: translateX(3px) scale(1.02);
+  }
+  
+  50% {
+    -webkit-transform: translateX(-3px) scale(0.98);
+    transform: translateX(-3px) scale(0.98);
+  }
+
+  60% {
+    -webkit-transform: translateX(3px) scale(1.01);
+    transform: translateX(3px) scale(1.01);
+  }
+
+  70% {
+    -webkit-transform: translateX(-3px) scale(0.99);
+    transform: translateX(-3px) scale(0.99);
+  }
+
+  80% {
+    -webkit-transform: translateX(2px) scale(1.01);
+    transform: translateX(2px) scale(1.01);
+  }
+
+  90% {
+    -webkit-transform: translateX(-2px) scale(0.99);
+    transform: translateX(-2px) scale(0.99);
+  }
+  }
+  
+  .hit {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: backwards;
+  -webkit-animation-fill-mode: backwards;
+  -webkit-animation-name: hit;
+  animation-name: hit;
+  }
+
+
+@-webkit-keyframes flipOpen {
+  from {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  
+  45% {
+    -webkit-transform: rotateY(20deg);
+    transform: rotateY(20deg);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  
+  50% {
+    -webkit-transform: rotateY(85deg);
+    transform: rotateY(85deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  
+  65% {
+    -webkit-transform: rotateY(110deg);
+    transform: rotateY(110deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  
+  70% {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  80% {
+    -webkit-transform: rotateY(170deg);
+    transform: rotateY(170deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  85% {
+    -webkit-transform: rotateY(100deg);
+    transform: rotateY(100deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  93% {
+    -webkit-transform: rotateY(85deg);
+    transform: rotateY(85deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  96% {
+    -webkit-transform: rotateY(10deg);
+    transform: rotateY(10deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  to {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  }
+  
+  @keyframes flipOpen {
+    from {
+      -webkit-transform: rotateY(0);
+      transform: rotateY(0);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+    }
+    
+    45% {
+      -webkit-transform: rotateY(20deg);
+      transform: rotateY(20deg);
+      -webkit-animation-timing-function: ease-out;
+      animation-timing-function: ease-out;
+    }
+    
+    50% {
+      -webkit-transform: rotateY(85deg);
+      transform: rotateY(85deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+    
+    65% {
+      -webkit-transform: rotateY(110deg);
+      transform: rotateY(110deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+    
+    70% {
+      -webkit-transform: rotateY(180deg);
+      transform: rotateY(180deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+  
+    80% {
+      -webkit-transform: rotateY(170deg);
+      transform: rotateY(170deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+  
+    85% {
+      -webkit-transform: rotateY(100deg);
+      transform: rotateY(100deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+  
+    93% {
+      -webkit-transform: rotateY(85deg);
+      transform: rotateY(85deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+  
+    96% {
+      -webkit-transform: rotateY(10deg);
+      transform: rotateY(10deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+  
+    to {
+      -webkit-transform: rotateY(0deg);
+      transform: rotateY(0deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+  }
+  
+  .flipOpen {
+    transform-origin: 100% 50%;
+  -webkit-transform: perspective(400px);
+   transform: perspective(400px);
+  -webkit-animation-duration: 2.8s;
+  animation-duration: 2.8s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+  -webkit-animation-name: flipOpen;
+  animation-name: flipOpen;
+  }
+
+
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+	  
+  .clock1 {
+      border-width: 18px;
+    box-shadow:
+    0 0 0 4px rgba(0,0,0,0.1),
+    inset 0 0 0 3px whitesmoke,
+    inset 0 0 8px black,
+    0 0 8px rgba(0,0,0,0.2);
+    }
+
+  .clock2 {
+    border-width: 14px;
+  }
+    
+    .hour-hand-1, .hour-hand-2 {
+    width: 8px;
+    }
+    
+    .min-hand-1, .min-hand-2 {
+    width: 6px;
+    }
+    .second-hand-1, .second-hand-2 {
+    width: 4px;
+    }
+  
+}
+
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .clock1 {
+    border-width: 16px;
+    box-shadow:
+    0 0 0 4px rgba(0,0,0,0.1),
+    inset 0 0 0 3px whitesmoke,
+    inset 0 0 8px black,
+    0 0 8px rgba(0,0,0,0.2);
+    padding: 1.6rem;
+  }
+
+  .clock2 {
+    border-width: 13px;
+    padding: 1.6rem;
+  }
+  
+  .hour-hand-1, .hour-hand-2 {
+  width: 7px;
+  }
+  
+  .min-hand-1, .min-hand-2 {
+  width: 5px;
+  }
+  .second-hand-1, .second-hand-2 {
+  width: 3px;
+  }
+}
+
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+  .clock1 {
+    border-width: 16px;
+    box-shadow:
+    0 0 0 4px rgba(0,0,0,0.1),
+    inset 0 0 0 3px whitesmoke,
+    inset 0 0 8px black,
+    0 0 8px rgba(0,0,0,0.2);
+    padding: 1.6rem;
+  }
+
+  .clock2 {
+    border-width: 13px;
+    padding: 1.6rem;
+  }
+  
+  .hour-hand-1, .hour-hand-2 {
+  width: 7px;
+  }
+  
+  .min-hand-1, .min-hand-2 {
+  width: 5px;
+  }
+  .second-hand-1, .second-hand-2 {
+  width: 3px;
+  }
+  
+}
+
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  .clock1 {
+    width: 35vw;
+    height: 35vw;
+    border-width: 14px;
+    padding: 1.4rem;
+    box-shadow:
+    0 0 0 3px rgba(0,0,0,0.1),
+    inset 0 0 0 3px whitesmoke,
+    inset 0 0 7px black,
+    0 0 7px rgba(0,0,0,0.2);
+  }
+
+  .clock2 {
+    width: 35vw;
+    height: 35vw;
+    border-width: 12px;
+    padding: 1.4rem;
+  }
+  
+  .hour-hand-1, .hour-hand-2 {
+  width: 6px;
+  height: 40%;
+  }
+  
+  .min-hand-1, .min-hand-2 {
+  width: 4px;
+  height: 50%;
+  }
+  .second-hand-1, .second-hand-2 {
+  width: 2px;
+  }
+  
+}
+
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  .clock1 {
+    width: 40vw;
+    height: 40vw;
+    border-width: 12px;
+    padding: 1rem;
+    box-shadow:
+    0 0 0 2px rgba(0,0,0,0.1),
+    inset 0 0 0 2px whitesmoke,
+    inset 0 0 6px black,
+    0 0 6px rgba(0,0,0,0.2);
+  }
+
+  .clock2 {
+    width: 40vw;
+    height: 40vw;
+    border-width: 10px;
+    padding: 1rem;
+    box-shadow:
+    0 0 0 3px #3f2d30,
+     inset 0 0 0 3px #3f2d30,
+     inset 0 0 4px #3f2d30,
+      0 0 4px #3f2d30;
+  }
+  
+  .hour-hand-1, .hour-hand-2 {
+  width: 5px;
+  height: 40%;
+  }
+  
+  .min-hand-1, .min-hand-2 {
+  width: 3px;
+  height: 50%;
+  }
+  .second-hand-1, .second-hand-2 {
+  width: 2px;
+  }
+  
+}
+
+@media (max-width: 320px) {
+  
+  .clock1 {
+    width: 45vw;
+    height: 45vw;
+    border-width: 6px;
+    box-shadow:
+    0 0 0 2px rgba(0,0,0,0.1),
+    inset 0 0 0 2px whitesmoke,
+    inset 0 0 4px black,
+    0 0 4px rgba(0,0,0,0.2);
+  }
+
+  .clock2 {
+    width: 45vw;
+    height: 45vw;
+    border-width: 5px;
+    box-shadow:
+    0 0 0 2px #3f2d30,
+     inset 0 0 0 2px #3f2d30,
+     inset 0 0 3px #3f2d30,
+      0 0 2px #3f2d30;
+  }
+  
+  .hour-hand-1, .hour-hand-2 {
+  width: 4px;
+  height: 45%;
+  }
+  
+  .min-hand-1, .min-hand-2 {
+  width: 3px;
+  height: 50%;
+  }
+  .second-hand-1, .second-hand-2 {
+  width: 2px;
+  }
+  
 }
