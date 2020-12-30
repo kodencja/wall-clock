@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/wall-clock/static/css/main.acc34370.chunk.css",
+    "main.css": "/wall-clock/static/css/main.37921c62.chunk.css",
     "main.js": "/wall-clock/static/js/main.20320c24.chunk.js",
     "main.js.map": "/wall-clock/static/js/main.20320c24.chunk.js.map",
     "runtime-main.js": "/wall-clock/static/js/runtime-main.b25998a2.js",
@@ -10,13 +10,13 @@
     "static/js/3.2e088b03.chunk.js": "/wall-clock/static/js/3.2e088b03.chunk.js",
     "static/js/3.2e088b03.chunk.js.map": "/wall-clock/static/js/3.2e088b03.chunk.js.map",
     "index.html": "/wall-clock/index.html",
-    "static/css/main.acc34370.chunk.css.map": "/wall-clock/static/css/main.acc34370.chunk.css.map",
+    "static/css/main.37921c62.chunk.css.map": "/wall-clock/static/css/main.37921c62.chunk.css.map",
     "static/js/2.b239927e.chunk.js.LICENSE.txt": "/wall-clock/static/js/2.b239927e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b25998a2.js",
     "static/js/2.b239927e.chunk.js",
-    "static/css/main.acc34370.chunk.css",
+    "static/css/main.37921c62.chunk.css",
     "static/js/main.20320c24.chunk.js"
   ]
 }
