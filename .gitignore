@@ -11,9 +11,9 @@
 debug.log
 
 # copies
-App1.js
-App1.css
-/components1
+/src/App1.js
+/src/App1.css
+/src/components_1
 
 # production
 /build

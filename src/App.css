@@ -1,26 +1,14 @@
 .container {
-/* .App { */
   text-align: center;
   display: flex;
   flex: 1;
   align-items: center;
   justify-content: center;
-  /* padding-top: 10%; */
   width: 100%;
   height: 100%;
 }
 
-html {
-  /* background: #018DED url(http://unsplash.it/1500/1000?image=881&blur=5); */
-  background: #018DED;
-  font-family: 'helvetica neue';
-  text-align: center;
-  font-size: 10px;
-  
-}
-
 .App {
-/* body { */
   background-image: url("https://cdn.pixabay.com/photo/2016/02/04/18/45/wall-1179614_960_720.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -29,22 +17,17 @@ html {
   width: auto;
   height: 110vh;
   overflow: hidden;
-  /* height: 100vh; */
 }
 
 .clock1 {
-/*    -webkit-transform: perspective(400px);*/
-/*    transform: perspective(400px);*/
   width: 30vw;
   height: 30vw;
   box-sizing: border-box;
   z-index: 100;
   position: relative;
-margin-right: 2px;
+  margin-right: 2px;
   border: 20px solid whitesmoke;
-/*      ten radius zaokrągla rogi kwadratu tak że obiekt przekształca się w koło*/
-border-radius: 50%; 
-
+  border-radius: 50%; 
   padding: 2rem;
   box-shadow:
     0 0 0 4px rgba(0,0,0,0.1),
@@ -57,44 +40,30 @@ border-radius: 50%;
     width: 30vw;
     height: 30vw;
     box-sizing: border-box;
-     position: relative;
-     /* border: 20px solid #8E666B; */
-     border: 16px solid #533c3f;
-     border-radius: 50%; 
-   padding: 2rem;
-   z-index: 0;
+    position: relative;
+    border: 16px solid #412f32;
+    border-radius: 50%; 
+    padding: 2rem;
+    z-index: 0;
     box-shadow:
      0 0 0 4px #3f2d30,
       inset 0 0 0 4px #3f2d30,
       inset 0 0 4px #3f2d30,
        0 0 4px #3f2d30;
-
-       /* 0 0 0 4px #533c3f,
-       inset 0 0 0 3px #533c3f,
-       inset 0 0 5px #533c3f,
-        0 0 5px #533c3f; */
-      /* -webkit-box-shadow: inset 10px 10px 5px 0px rgba(0,0,0,0.75);
--moz-box-shadow: inset 10px 10px 5px 0px rgba(0,0,0,0.75);
-box-shadow: inset 10px 10px 5px 0px rgba(0,0,0,0.75); */
   }
 
 .clock-face {
 position: relative;
 width: 100%;
 height: 100%;
-  /* transform: translateY(-3px);   */
-/*    account for the height of the clock hands */
 }
   
 .hand {
-/*      dałem bottom zamiast 'top' i ustawiłem procentową wysokość a nie szerokość */
   height: 50%;
-  /* background: black; */
   position: absolute;
   bottom: 50%;
 left: 50%;
-transform-origin: 50% 100%; /*pierwsza wartość to oś Y na środku, a druga to oś X na dole */
-/*		transform: rotate(90deg);*/
+transform-origin: 50% 100%;
 transition: all .05s;
 transition-timing-function: cubic-bezier(0.26, 2.74, 0.82, 0.07);
 }
@@ -106,7 +75,6 @@ background-color: black;
 }
 
 .min-hand-1 {
-/* background-color: darkolivegreen; */
 background-color: seagreen;
 width: 6px;
 height: 45%;
@@ -121,17 +89,17 @@ transform: rotate(5deg);
 .hour-hand-2 {
   height: 35%;
   width: 8px;
-  background-color: #3f2d30;
+  background-color: #412f32;
   }
   
   .min-hand-2 {
-  background-color: #3f2d30;
+  background-color: #412f32;
   width: 6px;
   height: 45%;
   }
   
   .second-hand-2 {
-  background-color: #3f2d30;
+  background-color: #412f32;
   width: 4px;
   transform: rotate(5deg);
   }
@@ -158,7 +126,6 @@ to {
 
 
 .disappear {
-   /* animation-timing-function: ease-in-out; */
 -webkit-animation-duration: 30s;
 animation-duration: 30s;
 -webkit-animation-name: disappear;
