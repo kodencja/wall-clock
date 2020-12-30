@@ -124,7 +124,9 @@ class App extends Component {
   render() { 
     return ( 
       <div className={"App "+this.state.AppClass}>
+        <div className="title">Wall clock animation</div>
         <div className="container">
+          
         <Clock onGetClass={"clock1 "+ this.state.clockClass1} getHourHandClass={this.state.hourClass1} getMinHandClass={this.state.minClass1} getSecHandClass={this.state.secClass1} onHourHandStyle={this.state.hourHandStyle}
         onMinHandStyle={this.state.minHandStyle} 
         onSecondHandStyle={this.state.secondHandStyle} onStyle={this.state.style1} />
@@ -134,6 +136,7 @@ class App extends Component {
          onStyle={this.state.style2}
        />  
         </div>
+       <div className="foot"><h3>2020 <i>by kodencja</i></h3></div>
       </div>
      );
   }

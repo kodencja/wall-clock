@@ -2,21 +2,42 @@
   text-align: center;
   display: flex;
   flex: 1;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 50%;
 }
 
 .App {
   background-image: url("https://cdn.pixabay.com/photo/2016/02/04/18/45/wall-1179614_960_720.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  text-align: center;
   margin: 0;
-  font-size: 2rem;
+  font-size: 2em;
   width: auto;
-  height: 110vh;
+  height: 100vh;
   overflow: hidden;
+}
+
+.title {
+  font-family: 'Droid Sans' sans-serif;
+  color: rgb(236, 229, 220);
+  background-color: #6b575c;
+  padding: 0.2em;
+  margin: 0.3em;
+  margin-bottom: 1.5em;
+  font-weight: bold;
+  font-size: 2.2em;
+}
+
+.foot{
+  position: absolute;
+  left: 50%;
+  bottom: 5px;
+  margin-right: -50%;
+  transform: translate(-50%,0%);
+  font-family: 'Cantarell';
 }
 
 .clock1 {
