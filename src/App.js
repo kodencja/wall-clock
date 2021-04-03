@@ -170,12 +170,18 @@ class App extends PureComponent {
           />
         </div>
         <div className="foot">
-          <div style={{ color: "midnightblue" }}>
+          <div
+            style={{
+              color: "midnightblue",
+              marginBottom: "10px",
+              marginTop: "10px",
+            }}
+          >
             * React App (Class and Functional components)
           </div>
-          <h3>
+          <div>
             2020 <i>by kodencja</i>
-          </h3>
+          </div>
         </div>
       </div>
     );
