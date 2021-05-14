@@ -1,7 +1,7 @@
 import React from "react";
 
 function Oclock(props) {
-  //   console.log("Oclock function");
+  // console.log("Oclock function");
 
   const {
     onGetClass,
@@ -36,4 +36,4 @@ function Oclock(props) {
   );
 }
 
-export default React.memo(Oclock);
+export default Oclock;

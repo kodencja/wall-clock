@@ -1,9 +1,19 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent, lazy, Suspense } from "react";
 import "./App.css";
+import Footer from "./components/Footer";
+// import ModalComp from "./components/ModalComp";
 import Oclock from "./components/Oclock";
+
+const ModalComp = lazy(() => import("./components/ModalComp"));
+
+export const ModalContext = React.createContext();
+// const ModalProvider = ModalContext.Provider;
+// const ModalConsumer = ModalContext.Consumer;
+// export { ModalProvider, ModalConsumer };
 
 class App extends PureComponent {
   state = {
+    modalIsOpen: false,
     AppClass: "",
     ifHit: false,
     clockClass1: "",
@@ -77,7 +87,7 @@ class App extends PureComponent {
     } else if (secondsDegrees > 9 && secondsDegrees <= 22) {
       transitionDurSec = "0.05s";
       clockCl1 = "flipOpen";
-      // if (this.state.ifHit === true) {
+
       if (ifWasHit === true) {
         clockCl2 = "disappear";
       }
@@ -104,8 +114,6 @@ class App extends PureComponent {
     else transitionDurHour = "0.05s";
     hourRotate = `rotate(${hoursDeg}deg)`;
 
-    // console.log(secRotate);
-
     this.setState({
       AppClass: AppCl,
       ifHit: ifWasHit,
@@ -126,8 +134,16 @@ class App extends PureComponent {
     });
   };
 
+  handleModalOpen = (value) => {
+    console.log("handleModalOpen Fn");
+    this.setState({
+      modalIsOpen: value,
+    });
+  };
+
   render() {
     const {
+      modalIsOpen,
       AppClass,
       clockClass1,
       clockClass2,
@@ -146,7 +162,7 @@ class App extends PureComponent {
 
     return (
       <div className={"App " + AppClass}>
-        <div className="title">Wall clock animation *</div>
+        <div className="title">Wall clock animation</div>
         <div className="container">
           <Oclock
             onGetClass={"clock1 " + clockClass1}
@@ -169,20 +185,17 @@ class App extends PureComponent {
             onStyle={style2}
           />
         </div>
-        <div className="foot">
-          <div
-            style={{
-              color: "midnightblue",
-              marginBottom: "10px",
-              marginTop: "10px",
+        <Footer onModalOpen={this.handleModalOpen} />
+        <Suspense fallback={<p>Loading...</p>}>
+          <ModalContext.Provider
+            value={{
+              modalIsOpen: modalIsOpen,
+              handleModalOpen: this.handleModalOpen,
             }}
           >
-            * React App (Class and Functional components)
-          </div>
-          <div>
-            2020 <i>by kodencja</i>
-          </div>
-        </div>
+            <ModalComp />
+          </ModalContext.Provider>
+        </Suspense>
       </div>
     );
   }
