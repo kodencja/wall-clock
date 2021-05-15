@@ -135,7 +135,6 @@ class App extends PureComponent {
   };
 
   handleModalOpen = (value) => {
-    console.log("handleModalOpen Fn");
     this.setState({
       modalIsOpen: value,
     });
