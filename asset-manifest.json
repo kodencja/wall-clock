@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/wall-clock/static/css/main.0b23cd83.chunk.css",
-    "main.js": "/wall-clock/static/js/main.2c19c59f.chunk.js",
-    "main.js.map": "/wall-clock/static/js/main.2c19c59f.chunk.js.map",
-    "runtime-main.js": "/wall-clock/static/js/runtime-main.6576740b.js",
-    "runtime-main.js.map": "/wall-clock/static/js/runtime-main.6576740b.js.map",
+    "main.js": "/wall-clock/static/js/main.cb221cca.chunk.js",
+    "main.js.map": "/wall-clock/static/js/main.cb221cca.chunk.js.map",
+    "runtime-main.js": "/wall-clock/static/js/runtime-main.e0d5da13.js",
+    "runtime-main.js.map": "/wall-clock/static/js/runtime-main.e0d5da13.js.map",
     "static/js/2.bf82d0be.chunk.js": "/wall-clock/static/js/2.bf82d0be.chunk.js",
     "static/js/2.bf82d0be.chunk.js.map": "/wall-clock/static/js/2.bf82d0be.chunk.js.map",
     "static/js/3.02843f1d.chunk.js": "/wall-clock/static/js/3.02843f1d.chunk.js",
     "static/js/3.02843f1d.chunk.js.map": "/wall-clock/static/js/3.02843f1d.chunk.js.map",
-    "static/css/4.787e40bd.chunk.css": "/wall-clock/static/css/4.787e40bd.chunk.css",
+    "static/css/4.5518a013.chunk.css": "/wall-clock/static/css/4.5518a013.chunk.css",
     "static/js/4.c1a49a6e.chunk.js": "/wall-clock/static/js/4.c1a49a6e.chunk.js",
     "static/js/4.c1a49a6e.chunk.js.map": "/wall-clock/static/js/4.c1a49a6e.chunk.js.map",
     "static/css/5.1c0466af.chunk.css": "/wall-clock/static/css/5.1c0466af.chunk.css",
@@ -23,7 +23,7 @@
     "static/js/8.22d39b1b.chunk.js": "/wall-clock/static/js/8.22d39b1b.chunk.js",
     "static/js/8.22d39b1b.chunk.js.map": "/wall-clock/static/js/8.22d39b1b.chunk.js.map",
     "index.html": "/wall-clock/index.html",
-    "static/css/4.787e40bd.chunk.css.map": "/wall-clock/static/css/4.787e40bd.chunk.css.map",
+    "static/css/4.5518a013.chunk.css.map": "/wall-clock/static/css/4.5518a013.chunk.css.map",
     "static/css/5.1c0466af.chunk.css.map": "/wall-clock/static/css/5.1c0466af.chunk.css.map",
     "static/css/6.565e0573.chunk.css.map": "/wall-clock/static/css/6.565e0573.chunk.css.map",
     "static/css/main.0b23cd83.chunk.css.map": "/wall-clock/static/css/main.0b23cd83.chunk.css.map",
@@ -31,9 +31,9 @@
     "static/js/3.02843f1d.chunk.js.LICENSE.txt": "/wall-clock/static/js/3.02843f1d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.6576740b.js",
+    "static/js/runtime-main.e0d5da13.js",
     "static/js/3.02843f1d.chunk.js",
     "static/css/main.0b23cd83.chunk.css",
-    "static/js/main.2c19c59f.chunk.js"
+    "static/js/main.cb221cca.chunk.js"
   ]
 }
