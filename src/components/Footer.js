@@ -5,7 +5,13 @@ function Footer({ onModalOpen }) {
   return (
     <footer className="down-buttons">
       <button type="link" className="btn-down home-page-link shadow-mid-dark">
-        <a href="https://codencja.herokuapp.com/">Back to Home Page</a>
+        <a
+          href="https://codencja.herokuapp.com/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Back to Home Page
+        </a>
       </button>
 
       <p>

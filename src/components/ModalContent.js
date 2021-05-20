@@ -27,6 +27,13 @@ function ModalContent() {
             <b>createContext, memo, lazy</b> and <b>suspense</b> as well as{" "}
             <b>react-modal</b>.
           </p>
+          <a
+            href="https://github.com/kodencja/wall-clock"
+            target="_blank"
+            rel="noreferrer"
+          >
+            See the code
+          </a>
         </div>
       </div>
     </>

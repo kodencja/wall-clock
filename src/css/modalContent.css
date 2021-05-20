@@ -51,3 +51,13 @@
 .border-dark {
   border-color: #343a40 !important;
 }
+
+.dev-box a {
+  color: darkslategrey;
+  font-weight: 700;
+  float: right;
+}
+
+.dev-box a:hover {
+  color: rgb(60, 100, 100);
+}
